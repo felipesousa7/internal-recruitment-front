@@ -1,4 +1,4 @@
-# Controle de Vendas e Estoque - Frontend
+# Sistema de Recrutamento Interno - Frontend
 Esta é uma aplicação web criada para facilitar o processo de recrutamento interno para os colaboradores da empresa.
 
 ![Imagem](./src/assets/img/img.jpg)
