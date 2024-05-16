@@ -1,0 +1,35 @@
+.container {
+    width: 90%;
+    margin: auto;
+ }
+
+ button {
+    width: 100%;
+ }
+
+ h1 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+ }
+
+ .edit {
+    color: rgb(0, 153, 255);
+ }
+
+ .delete {
+    color: red;
+ }
+
+ .job-card {
+  width: calc(32% - 20px);
+  margin: 10px 0; /* Adiciona espaçamento vertical */
+  display: inline-block;
+  vertical-align: top;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.job-card-content {
+  padding: 15px;
+}
+

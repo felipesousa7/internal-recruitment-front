@@ -1,0 +1,32 @@
+<div class="container">
+    <form class="form mat-elevation-z8">
+        <h1>Plataforma de Recrutamento Interno</h1>
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>E-mail</mat-label>
+          <input
+            [formControl]="email"
+            required
+            [(ngModel)]="creds.email"
+            name="email"
+            matInput
+            >
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Senha</mat-label>
+            <input
+                [formControl]="password"
+                required
+                [(ngModel)]="creds.password"
+                name="senha"
+                matInput
+                type="password">
+          </mat-form-field>
+          <button
+            [disabled]="!validaCampos()"
+            (click)="logar()"
+            class="full-width mat-elevation-z4"
+            mat-stroked-button color="primary">Login</button>
+            <p class="register-link">Não tem uma conta? <a routerLink="/register">Cadastre-se aqui</a></p>
+    </form>
+</div>

@@ -1,0 +1,41 @@
+<div class="container">
+  <form class="form mat-elevation-z8">
+    <h1>Plataforma de Recrutamento Interno</h1>
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Nome</mat-label>
+      <input
+        [formControl]="name"
+        name="name"
+        matInput
+        >
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>E-mail</mat-label>
+      <input
+        [formControl]="email"
+        name="email"
+        matInput
+        >
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Senha</mat-label>
+      <input
+        [formControl]="password"
+        name="password"
+        matInput
+        type="password">
+    </mat-form-field>
+
+    <section class="section">
+      <mat-checkbox (change)="toggleAdmin($event.checked)" class="margin" color="primary">Administrador</mat-checkbox>
+    </section>
+
+    <button
+      [disabled]="!validaCampos()"
+      (click)="register()"
+      class="full-width mat-elevation-z4"
+      mat-stroked-button color="primary">Cadastrar</button>
+  </form>
+</div>
