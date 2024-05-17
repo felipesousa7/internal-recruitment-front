@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth/auth.guard';
+import { AdminGuard } from './auth/admin.guard';
 import { JobCreateComponent } from './components/job/job-create/job-create.component';
 import { JobListComponent } from './components/job/job-list/job-list.component';
 import { JobReadComponent } from './components/job/job-read/job-read.component';
@@ -9,6 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { NavComponent } from './components/nav/nav.component';
 import { RegisterComponent } from './components/register/register.component';
+
 const routes: Routes = [
   {
     path: 'login',
@@ -22,11 +24,10 @@ const routes: Routes = [
     path: '',
     component: NavComponent, canActivate: [AuthGuard], children: [
       { path: 'home', component: HomeComponent },
-
-      { path: 'jobs',            component:   JobListComponent },
-      { path: 'jobs/create',     component: JobCreateComponent },
+      { path: 'jobs', component: JobListComponent },
+      { path: 'jobs/create', component: JobCreateComponent, canActivate: [AdminGuard] },
       { path: 'jobs/update/:id', component: JobUpdateComponent },
-      { path: 'jobs/read/:id',   component:    JobReadComponent},
+      { path: 'jobs/read/:id', component: JobReadComponent },
     ]
   },
 ];

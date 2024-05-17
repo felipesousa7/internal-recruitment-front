@@ -23,11 +23,14 @@ export class AuthService {
         console.log('Response:', response);
         if (response.body && response.body.token) {
           const authToken = response.body.token;
+          localStorage.setItem('admin', response.body.admin || 'false');
+          localStorage.setItem('name', response.body.name|| '');
           this.successfulLogin(authToken);
         }
       })
     );
   }
+
   register(name: string, email: string, password: string, admin: boolean) {
     const body = { name, email, password, admin };
     return this.http.post(`${API_CONFIG.baseUrl}/auth/register`, body, {
@@ -46,14 +49,17 @@ export class AuthService {
 
   isAuthenticated() {
     let token = localStorage.getItem('token');
-    if(token !=  null) {
+    if(token != null) {
        return !this.jwtService.isTokenExpired(token);
     }
     return false;
   }
 
+  isAdmin() {
+    return localStorage.getItem('admin') === 'true';
+  }
+
   logout() {
     localStorage.clear();
   }
-
 }

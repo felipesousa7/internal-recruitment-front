@@ -1,7 +1,11 @@
 # Sistema de Recrutamento Interno - Frontend
 Esta é uma aplicação web criada para facilitar o processo de recrutamento interno para os colaboradores da empresa.
 
-![Imagem](./src/assets/img/img.jpg)
+Visão do usuário:
+![Imagem](./src/assets/img/imgUser.jpg)
+
+Visão do admin:
+![Imagem](./src/assets/img/imgAdmin.jpg)
 
 ### Tecnologias Utilizadas
 * Angular 13.1.2
@@ -11,6 +15,7 @@ Esta é uma aplicação web criada para facilitar o processo de recrutamento int
 * Interação com o backend para cadastro e gerenciamento de vagas
 
 ### Como Executar
+* Certifique-se de ter o Node.js e o Angular CLI instalados. (verões utilizadas: node v14.21.3 e angular v13.1.2)
 * Clone e execute o projeto [`Back-end`](https://github.com/felipesousa7/internal-recruitment-api)
 * Clone este repositório.
 * Instale as dependências usando `npm install`
@@ -19,6 +24,7 @@ Esta é uma aplicação web criada para facilitar o processo de recrutamento int
 
 ### Estrutura do Projeto
 * auth/auth.guard: Guarda de rota para verificar autenticação do usuário antes de acessar páginas protegidas.
+* auth/admin.guard: Guarda de rota para verificar as permissões do usuário.
 * components/header: Componente para exibir o cabeçalho da página, com opções de navegação e autenticação.
 * components/home: Página inicial da aplicação, exibindo informações gerais.
 * components/job: Componente para exibir detalhes de uma vaga de emprego.
